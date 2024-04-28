@@ -39,7 +39,7 @@ fn main() {
     }
 
     if *is_version {
-        println!("grep (grep-rs) 0.1");
+        println!("grep (grep-rs) 1.0.0");
         println!("License MIT <https://github.com/KaiAF/grep-rs/blob/master/LICENSE>");
         println!("");
         println!("Written by Iris Zol");
