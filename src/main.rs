@@ -33,7 +33,7 @@ fn main() {
         println!("Control control:");
         println!("\t-c, --colour          displays a colour on any words that were found");
         println!("");
-        println!("Report bugs to: https://github.com/KaiAF/grep-rs/issues\ngrep rust home page: https://github.com/KaiAF/grep-rs");
+        println!("Report bugs to: https://github.com/KaiAF/grep-rs/issues\ngrep-rs source code: https://github.com/KaiAF/grep-rs");
 
         exit(0);
     }
