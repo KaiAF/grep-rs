@@ -22,13 +22,16 @@ fn main() {
 
     if *is_help {
         println!("Usage: grep [OPTION]... PATTERN [FILE]...\nSearch for PATTERN in each FILE or standard input.\nPATTERN is, by default, a basic regular expression (BRE).\nExample: grep -i 'hello world' menu.h main.c\n");
+        println!("Regexp selection and interpretation:");
+        println!("\t-i, --ignore-case     ignore case distinctions");
         println!("Miscellaneous:");
-        println!("\t-V, --version\t\tdisplay version information and exit");
-        println!("\t    --help\t\tdisplay this help text and exit");
-        println!("\nOutput control:\n\t-m\t\tstop after NUM matches");
-        println!("\t-n\t\tprint line number with output lines");
+        println!("\t-V, --version         display version information and exit");
+        println!("\t    --help            display this help text and exit");
+        println!("\nOutput control:");
+        println!("\t-m                    stop after NUM matches");
+        println!("\t-n, --line-number     print line number with output lines");
         println!("Control control:");
-        println!("\t-c, --colour\t\tdisplays a colour on any words that were found");
+        println!("\t-c, --colour          displays a colour on any words that were found");
         println!("");
         println!("Report bugs to: https://github.com/KaiAF/grep-rs/issues\ngrep rust home page: https://github.com/KaiAF/grep-rs");
 
@@ -99,11 +102,11 @@ fn parse_options_bool(args: &Vec<String>) -> HashMap<&str, bool> {
 
     if options.len() > 0 {
         for option in options {
-            if option.eq("-i") {
+            if option.eq("-i") || option.eq("--ignore-case") {
                 mapped_options.insert("ignore_case", true);
             }
 
-            if option.eq("-n") {
+            if option.eq("-n") || option.eq("--line-number") {
                 mapped_options.insert("line_number", true);
             }
 
